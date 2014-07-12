@@ -18,10 +18,10 @@ def has_only_one_child(pre_order_array )
 		return false if not ( min..max) === pre_order_array[i]		
 		if pre_order_array[i] > pre_order_array[i-1]
 			#if value has increased in this iteration , then update the lower bound
-			min = [min , pre_order_array[i-1]].min
+			min = [min , pre_order_array[i-1]].max
 		elsif pre_order_array[i] < pre_order_array[i-1]
 			#if value has decreased in this iteration , then update the upper bound
-			max = [max , pre_order_array[i-1]].max
+			max = [max , pre_order_array[i-1]].min
 		else
 			min = pre_order_array[i]
 			max = pre_order_array[i]
